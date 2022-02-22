@@ -1,0 +1,84 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.target{
+    @apply bg-blue-300 md:col-span-4
+}
+.bttn{
+    @apply px-3 py-2.5 text-white transition duration-500 ease-in-out 
+    rounded-lg bg-gradient-to-r focus:shadow-xl focus:outline-none hover:shadow-lg
+}
+.bttn-primary{
+    @apply bg-blue-500 hover:bg-blue-600 
+}
+.bttn-secondary{
+    @apply bg-indigo-700 hover:bg-indigo-600 
+}
+.bttn-warning{
+    @apply bg-yellow-400 hover:bg-yellow-500 
+}
+.bttn-success{
+    @apply bg-green-500 hover:bg-green-600 
+}
+.bttn-dark{
+    @apply bg-gray-800 hover:bg-gray-900
+}
+.bar-left{
+    @apply fixed top-0 z-20 flex flex-col h-screen transition-all duration-500 ease-in-out bg-gray-900 text-gray-200 shadow-sm w-60
+}
+.list-item{
+    @apply block p-2 pl-4 mb-2 transition duration-500 ease-in-out rounded-lg hover:bg-indigo-700 bg-gray-800
+}
+.top-bar{
+    height:4rem;
+    @apply flex justify-between px-4 bg-white
+}
+.brand-title{
+    padding-top: 1.2rem;
+    padding-bottom: 1rem;
+    @apply text-xl font-extrabold text-center
+}
+.item-footer{
+    @apply block mt-auto px-2 pb-3 
+}
+.container-body{
+    @apply w-auto min-h-screen bg-gray-200 lg:pl-60
+}
+.section{
+    @apply bg-white rounded-lg shadow-xl p-7
+}
+.table-container{
+    @apply -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8
+}
+.table-content{
+    @apply inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8
+}
+.table-section{
+    @apply overflow-hidden border-b border-gray-200 sm:rounded-lg
+}
+.table{
+    @apply min-w-full divide-y divide-gray-200
+}
+.th{
+    @apply px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase
+}
+.edit{
+    @apply mr-2 text-yellow-500 cursor-pointer hover:text-yellow-800
+}
+.del{
+    @apply text-red-600 cursor-pointer hover:text-red-900
+}
+.input-form{
+    @apply block w-full px-3 py-2 border border-gray-200 rounded-lg focus:border-blue-400 focus:outline-none
+}
+.label-form{
+    @apply block mb-3 text-gray-600
+}
+.loading{
+    @apply fixed top-0 left-0 z-40 items-center justify-center w-full h-screen bg-gray-800 bg-opacity-5 
+}
+select{
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+}
