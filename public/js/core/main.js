@@ -8,7 +8,9 @@ function data(){
         internet: "mdi-wifi",
         date: new Date(),
         init(){
-            console.log("Bienvenido a SOT");
+            window.addEventListener("load",() => {
+                document.querySelector("#loading").classList = "loading hidden";
+            });
         },
         aside_bar: function (){
             if(this.aside !== "left-0"){
