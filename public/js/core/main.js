@@ -8,26 +8,7 @@ function data(){
         internet: "mdi-wifi",
         date: new Date(),
         init(){
-            window.addEventListener("load",() => {
-                document.querySelector("#loading").classList = "loading hidden";
-            });
-            setInterval(() => {
-                if(window.navigator.onLine == false){
-                    if(this.online == 0){
-                        alertify.notify("No estas conectado a internet");
-                        this.online++;
-                        this.internet = "mdi-wifi-off";
-                    }
-                }
-                else{
-                    if(this.offline == 0){
-                        alertify.notify("Conectado a internet");
-                        this.offline++;
-                        this.internet = "mdi-wifi";
-                    }
-                    
-                }
-            }, 5000);
+            console.log("Bienvenido a SOT");
         },
         aside_bar: function (){
             if(this.aside !== "left-0"){
