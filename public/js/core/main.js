@@ -8,6 +8,9 @@ function data(){
         internet: "mdi-wifi",
         date: new Date(),
         init(){
+            if(!window.navigator.onLine){
+                this.internet = "mdi-wifi-off";
+            }
             window.addEventListener("load",() => {
                 document.querySelector("#loading").classList = "loading hidden";
             });
@@ -26,7 +29,6 @@ function data(){
         }
     }
 }
-// Turbolinks.visit("/Proyectos.html", { action: "replace" });
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js')
       .then(reg => console.log('Registro de sw exitoso', reg))

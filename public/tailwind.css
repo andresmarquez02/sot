@@ -10,7 +10,7 @@ Document
 /**
 Use a better box model (opinionated).
 */
-
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
 *,
 ::before,
 ::after {
@@ -55,16 +55,7 @@ Improve consistency of default fonts in all browsers. (https://github.com/sindre
 */
 
 body {
-  font-family:
-		system-ui,
-		-apple-system, /* Firefox supports this but not yet `system-ui` */
-		'Segoe UI',
-		Roboto,
-		Helvetica,
-		Arial,
-		sans-serif,
-		'Apple Color Emoji',
-		'Segoe UI Emoji';
+  font-family: 'Fredoka', sans-serif;
 }
 
 /*
@@ -188794,4 +188785,7 @@ select{
   .\32xl\:backdrop-sepia {
     --tw-backdrop-sepia: sepia(100%);
   }
+}
+body {
+  font-family: 'Fredoka', sans-serif;
 }
