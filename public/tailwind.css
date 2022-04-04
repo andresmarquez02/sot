@@ -20,7 +20,15 @@ Use a better box model (opinionated).
 /**
 Use a more readable tab size (opinionated).
 */
-
+.img_h{
+  min-height: 8rem;
+  height:45vh
+}
+@media(min-width: 790px){
+  .img_h{
+    height:70vh
+  }
+}
 html {
   -moz-tab-size: 4;
   -o-tab-size: 4;

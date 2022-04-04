@@ -42,7 +42,7 @@
             </div>
             <div class="item-footer">
                 <div class="mb-2">
-                    <a href="https://andresmarquez.herokuapp.com/" class="block px-3 py-2 bttn bttn-secondary">
+                    <a href="https://andresmarquez02.github.io/andres/" class="block px-3 py-2 bttn bttn-secondary">
                         <i class="mdi mdi-account-circle"></i>
                         Portafolio
                     </a>
@@ -165,7 +165,9 @@
                     });
                 },
                 create_task(){
-                    if(this.projec !== "" && this.task !== "" && this.importancia !== ""){
+                    let letras = /^[a-zA-ZÁ-ÿ\s]{1,90}$/;
+                    if(this.projec !== "" && this.task !== "" && this.importancia !== "" &&
+                    letras.test(this.task)){
                         window.createTask(this.projec,this.task,this.importancia);
                         alertify.success("Tarea creada.");
                         setTimeout(()=>{
