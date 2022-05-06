@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <title>SOT | Editar Tarea</title>
 </head>
+
 <body>
     <div x-data="data()" x-init="init()">
         <div class="flex loading" id="loading">
@@ -23,8 +25,7 @@
         <aside class="bar-left" x-bind:class="aside">
             <div class="brand-title">
                 <a href="index.html">
-                    <img src="favicon.svg" class="inline w-8 h-8" alt="" srcset="">
-                    SOT
+                    <img src="favicon.svg" class="inline w-8 h-8" alt="" srcset=""> SOT
                 </a>
             </div>
             <div class="px-2 py-4 overflow-y-auto">
@@ -32,25 +33,21 @@
                     <span x-on:click="aside_bar"><i class="mdi" x-bind:class="bar"></i></span>
                 </div>
                 <a href="Proyectos.html" class="mt-4 list-item">
-                    <i class="mdi mdi-shape-plus"></i>
-                    Proyectos
+                    <i class="mdi mdi-shape-plus"></i> Proyectos
                 </a>
                 <a href="Tareas.html" class="list-item">
-                    <i class="mdi mdi-puzzle"></i>
-                    Tareas
+                    <i class="mdi mdi-puzzle"></i> Tareas
                 </a>
             </div>
             <div class="item-footer">
                 <div class="mb-2">
                     <a href="https://andresmarquez02.github.io/andres/" class="block px-3 py-2 bttn bttn-secondary">
-                        <i class="mdi mdi-account-circle"></i>
-                        Portafolio
+                        <i class="mdi mdi-account-circle"></i> Portafolio
                     </a>
                 </div>
                 <div>
                     <a href="https://github.com/andresmarquez02" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 bttn bttn-dark">
-                        <i class="mdi mdi-github-circle"></i>
-                        Github
+                        <i class="mdi mdi-github-circle"></i> Github
                     </a>
                 </div>
                 <div class="block mt-5 lg:hidden">
@@ -71,11 +68,10 @@
             </div>
         </aside>
         <div class="container-body">
-            <div class="top-bar" >
+            <div class="top-bar">
                 <div class="relative pl-5 mt-5 transition-all duration-500 ease-in-out" x-bind:style="title_bar">
                     <a href="index.html" class="flex mb-3 text-xl font-extrabold lg:hidden">
-                        <img src="favicon.svg" class="inline w-8 h-8" alt="" srcset="">
-                        SOT
+                        <img src="favicon.svg" class="inline w-8 h-8" alt="" srcset=""> SOT
                     </a>
                 </div>
                 <div>
@@ -105,8 +101,8 @@
                                 <div class="grid gap-3 md:grid-cols-2 grid-col-1">
                                     <div class="mb-3">
                                         <label class="label-form">Nombre de la Tarea</label>
-                                        <input type="text" class="input-form" x-model="task" x-bind:disabled="name_task">  
-                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Nombre del proyecto</span>  
+                                        <input type="text" class="input-form" x-model="task" x-bind:disabled="name_task">
+                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Nombre del proyecto</span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="label-form">Proyecto</label>
@@ -117,8 +113,8 @@
                                                     <span x-html="project.project.project"></span>
                                                 </option>
                                             </template>
-                                        </select> 
-                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Nombre del proyecto</span>     
+                                        </select>
+                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Nombre del proyecto</span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="label-form">Importancia</label>
@@ -128,8 +124,8 @@
                                                 <option x-bind:value="importance.importancia" x-html="importance.importancia"
                                                 x-bind:selected="importance.importancia == importancia ? true : false"></option>
                                             </template>
-                                        </select> 
-                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Imporatencia de la tarea</span>     
+                                        </select>
+                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Imporatencia de la tarea</span>
                                     </div>
                                     <div class="mb-3">
                                         <label class="label-form">Estatus</label>
@@ -141,7 +137,7 @@
                                         <label for="finalizada">
                                             Finalizada
                                         </label>
-                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Estatus de la tarea</span>     
+                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Estatus de la tarea</span>
                                     </div>
                                 </div>
                                 <button type="submit" class="mt-5 bttn bttn-warning " x-bind:hidden="name_task">
@@ -172,41 +168,42 @@
                 name_task: true,
                 importancia: '',
                 status: '',
-                importancias: [
-                    {'importancia': 'Normal'},
-                    {'importancia': 'Importante'},
-                    {'importancia': 'Muy importante'}
-                ],
-                init(){
-                    if(localStorage.getItem('task') == undefined){
+                importancias: [{
+                    'importancia': 'Normal'
+                }, {
+                    'importancia': 'Importante'
+                }, {
+                    'importancia': 'Muy importante'
+                }],
+                init() {
+                    if (localStorage.getItem('task') == undefined) {
                         window.location.href = "Tareas.html";
                     }
-                    window.addEventListener("load",() => {
-                        setTimeout(()=>{
+                    window.addEventListener("load", () => {
+                        setTimeout(() => {
                             window.Projects()
                             window.editTasks()
-                        },1000);
-                        setTimeout(()=>{
+                        }, 1000);
+                        setTimeout(() => {
                             this.projects = window.mis_proyectos;
                             this.task = window.editTask.result.task;
                             this.projec = window.editTask.result.project;
                             this.importancia = window.editTask.result.importance || window.editTask.result.importancia;
                             this.status = window.editTask.result.status
                             this.name_task = false;
-                        },2000);
+                        }, 2000);
                     });
                 },
-                update_task(){
-                    if(this.name_task == false){
-                        if(this.projec !== "" && this.task !== "" && this.importancia !== ""){
-                            window.updateTask(this.projec,this.task,this.importancia,this.status);
+                update_task() {
+                    if (this.name_task == false) {
+                        if (this.projec !== "" && this.task !== "" && this.importancia !== "") {
+                            window.updateTask(this.projec, this.task, this.importancia, this.status);
                             this.error_project = 0;
                             alertify.success("Tarea editada.");
-                            setTimeout(()=>{
+                            setTimeout(() => {
                                 window.location.href = "Tareas.html";
-                            },1000);
-                        }
-                        else{
+                            }, 1000);
+                        } else {
                             this.error_project = 1;
                         }
                     }
@@ -215,4 +212,5 @@
         }
     </script>
 </body>
+
 </html>

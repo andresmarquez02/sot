@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <title>SOT | Editar Proyecto</title>
 </head>
+
 <body>
     <div x-data="data()" x-init="init();">
         <div class="flex loading" id="loading">
@@ -23,8 +25,7 @@
         <aside class="bar-left" x-bind:class="aside">
             <div class="brand-title">
                 <a href="index.html">
-                    <img src="favicon.svg" class="inline w-8 h-8" alt="" srcset="">
-                    SOT
+                    <img src="favicon.svg" class="inline w-8 h-8" alt="" srcset=""> SOT
                 </a>
             </div>
             <div class="px-2 py-4 overflow-y-auto">
@@ -32,25 +33,21 @@
                     <span x-on:click="aside_bar"><i class="mdi" x-bind:class="bar"></i></span>
                 </div>
                 <a href="Proyectos.html" class="mt-4 list-item">
-                    <i class="mdi mdi-shape-plus"></i>
-                    Proyectos
+                    <i class="mdi mdi-shape-plus"></i> Proyectos
                 </a>
                 <a href="Tareas.html" class="list-item">
-                    <i class="mdi mdi-puzzle"></i>
-                    Tareas
+                    <i class="mdi mdi-puzzle"></i> Tareas
                 </a>
             </div>
             <div class="item-footer">
                 <div class="mb-2">
                     <a href="https://andresmarquez02.github.io/andres/" class="block px-3 py-2 bttn bttn-secondary">
-                        <i class="mdi mdi-account-circle"></i>
-                        Portafolio
+                        <i class="mdi mdi-account-circle"></i> Portafolio
                     </a>
                 </div>
                 <div>
                     <a href="https://github.com/andresmarquez02" target="_blank" rel="noopener noreferrer" class="block px-3 py-2 bttn bttn-dark">
-                        <i class="mdi mdi-github-circle"></i>
-                        Github
+                        <i class="mdi mdi-github-circle"></i> Github
                     </a>
                 </div>
                 <div class="block mt-5 lg:hidden">
@@ -68,11 +65,10 @@
             </div>
         </aside>
         <div class="container-body">
-            <div class="top-bar" >
+            <div class="top-bar">
                 <div class="relative pl-5 mt-5 transition-all duration-500 ease-in-out" x-bind:style="title_bar">
                     <a href="index.html" class="flex mb-3 text-xl font-extrabold lg:hidden">
-                        <img src="favicon.svg" class="inline w-8 h-8" alt="" srcset="">
-                        SOT
+                        <img src="favicon.svg" class="inline w-8 h-8" alt="" srcset=""> SOT
                     </a>
                 </div>
                 <div>
@@ -102,8 +98,8 @@
                                 <div>
                                     <div class="my-3">
                                         <label class="label-foem">Nombre del Proyecto</label>
-                                        <input type="text" class="input-form" x-bind:disabled="name_project" x-model="project">  
-                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Nombre del proyecto</span>  
+                                        <input type="text" class="input-form" x-bind:disabled="name_project" x-model="project">
+                                        <span class="text-sm text-red-600" x-show="error_project !== 0">Nombre del proyecto</span>
                                     </div>
                                     <button type="submit" class="mt-5 bttn bttn-warning ">
                                         <i class="mdi mdi-check-circle-outline"></i>
@@ -121,46 +117,46 @@
         </div>
     </div>
     <script src="../public/js/alpine.js"></script>
-   <script src="../public/js/core/main.js"></script>
-   <script src="../public/js/core/db.js"></script>
-   <script src="../public/js/alertifyjs/alertify.js"></script>
-   <script>
-    function proyectos(){
-        return {
-            project: '',
-            error_project: 0,
-            name_project: true,
-            init(){
-                if(localStorage.getItem('project') == undefined){
-                    window.location.href = "Proyectos.html";
-                }
-                window.addEventListener("load",() => {
-                    setTimeout(()=>{
-                        window.editProjects()
-                    },1000);
-                    setTimeout(()=>{
-                        this.project = window.editProject.result.project;
-                        this.name_project = false;
-                    },2000);
-                });
-            },
-            update_project(){
-                if(this.name_project == false){
-                    if(this.project !== ""){
-                        window.updateProject(this.project);
-                        this.error_project = 0;
-                        alertify.success("Proyecto editado.");
-                        setTimeout(()=>{
-                            window.location.href = "Proyectos.html";
-                        },1000);
+    <script src="../public/js/core/main.js"></script>
+    <script src="../public/js/core/db.js"></script>
+    <script src="../public/js/alertifyjs/alertify.js"></script>
+    <script>
+        function proyectos() {
+            return {
+                project: '',
+                error_project: 0,
+                name_project: true,
+                init() {
+                    if (localStorage.getItem('project') == undefined) {
+                        window.location.href = "Proyectos.html";
                     }
-                    else{
-                        this.error_project = 1;
+                    window.addEventListener("load", () => {
+                        setTimeout(() => {
+                            window.editProjects()
+                        }, 1000);
+                        setTimeout(() => {
+                            this.project = window.editProject.result.project;
+                            this.name_project = false;
+                        }, 2000);
+                    });
+                },
+                update_project() {
+                    if (this.name_project == false) {
+                        if (this.project !== "") {
+                            window.updateProject(this.project);
+                            this.error_project = 0;
+                            alertify.success("Proyecto editado.");
+                            setTimeout(() => {
+                                window.location.href = "Proyectos.html";
+                            }, 1000);
+                        } else {
+                            this.error_project = 1;
+                        }
                     }
                 }
             }
         }
-    }
-</script>
+    </script>
 </body>
+
 </html>
