@@ -123,7 +123,7 @@
                                                     </td>
                                                 </tr>
                                             </template>
-                            <template x-if="projectsLoading == true">
+                                            <template x-if="projectsLoading == true">
                                                 <tr>
                                                     <td class="px-6 py-4 whitespace-nowrap animate-pulse">
                                                         <div class="w-5/6 h-4 bg-indigo-500 rounded"></div>
@@ -134,7 +134,7 @@
                                                     </td>
                                                 </tr>
                                             </template>
-                            <template x-if="projectsLoading == true">
+                                            <template x-if="projectsLoading == true">
                                                 <tr>
                                                     <td class="px-6 py-4 whitespace-nowrap animate-pulse">
                                                         <div class="w-5/6 h-4 bg-indigo-500 rounded"></div>
@@ -145,7 +145,7 @@
                                                     </td>
                                                 </tr>
                                             </template>
-                            <template x-for="project of projects">
+                                            <template x-for="project of projects">
                                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap" x-html="project.project.project">
                                                         
@@ -162,24 +162,23 @@
                                                     </td>
                                                 </tr>
                                             </template>
-                            </tbody>
-                            </table>
-                        </div>
-                        </template>
-                        <template x-if="msgNotProjects == true">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </template>
+                            <template x-if="msgNotProjects == true">
                                 <div class="text-3xl font-extrabold text-center">
                                     No hay proyectos creados
                                 </div>
                             </template>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="p-4 text-gray-600 bg-white w-100">
+                <i class="mdi mdi-copyright"></i> Andres Marquez <span x-html="date.getFullYear()"></span>
+            </div>
         </div>
-    </div>
-    <div class="p-4 text-gray-600 bg-white w-100">
-        <i class="mdi mdi-copyright"></i> Andres Marquez <span x-html="date.getFullYear()"></span>
-    </div>
-    </div>
     </div>
     <script src="../public/js/alpine.js"></script>
     <script src="../public/js/core/main.js"></script>
